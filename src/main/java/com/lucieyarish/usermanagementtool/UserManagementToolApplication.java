@@ -10,21 +10,23 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @AllArgsConstructor
 public class UserManagementToolApplication {
 
-    private final UserRepository userRepository;
+    //TODO: switch to service once you create it
+    public static UserRepository userRepository;
 
-    private void addSampleData() {
+    public static void addSampleData() {
         userRepository.save(new User("Darth", "Vader", true, "darthvader@starwars.com", "123456789"));
         userRepository.save(new User("Hermione", "Granger", true, "hermione@hogwarts.com", "234867039"));
         userRepository.save(new User("Lisbeth", "Salander", true, "lisbeth@hacker.com", "125364859"));
         userRepository.save(new User("Ronald", "Weasley", true, "ronweasley@hogwarts.com", "564738940"));
     }
 
-    public void run(String... args) throws Exception {
-        addSampleData();
-    }
+//    public void run(String... args) throws Exception {
+//        addSampleData();
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(UserManagementToolApplication.class, args);
+        addSampleData();
     }
 
 
