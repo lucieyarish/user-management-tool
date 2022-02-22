@@ -1,6 +1,7 @@
 package com.lucieyarish.usermanagementtool.models;
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
