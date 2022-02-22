@@ -12,6 +12,7 @@
 * It will be possible to perform the following actions on each user: activate/deactivate, edit, delete
 
 ## Project Design
+
 ![page layout](https://github.com/lucieyarish/user-management-sys/blob/main/assets/layout.png)
 
 ![edit user](https://github.com/lucieyarish/user-management-sys/blob/main/assets/edit-usr.png)
