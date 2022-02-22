@@ -13,9 +13,9 @@
 
 ## Project Design
 
-![page layout](https://github.com/lucieyarish/user-management-sys/blob/main/assets/layout.png)
+![page layout](https://github.com/lucieyarish/user-management-tool/blob/main/assets/layout.png)
 
-![edit user](https://github.com/lucieyarish/user-management-sys/blob/main/assets/edit-usr.png)
+![edit user](https://github.com/lucieyarish/user-management-tool/blob/main/assets/edit-usr.png)
 
 ## Process Documentation
 
