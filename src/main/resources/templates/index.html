@@ -34,6 +34,7 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Creation Date</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -47,6 +48,15 @@
         <td th:text="${user.email}"></td>
         <td th:text="${user.phone}"></td>
         <td th:text="${user.createdOn}"></td>
+        <td>
+            <a th:href="|/removeUser/${user.id}|" th:text="${'delete'}"></a>
+        </td>
+<!--        <td>-->
+<!--            <form action="#" th:action="@{/user/{id}}" th:method="post" >-->
+<!--                <input type="hidden" th:field="${user}">Delete</input>-->
+<!--                <button type="submit" onClick="return confirm('sure?')"/>-->
+<!--            </form>-->
+<!--        </td>-->
     </tr>
     </tbody>
 </table>
