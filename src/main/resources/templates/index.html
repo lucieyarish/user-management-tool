@@ -43,7 +43,13 @@
         <td th:text="${user.name}"></td>
         <td th:text="${user.surname}"></td>
         <td>
-            <a th:href="|/user/${user.id}|" th:text="${user.active}"></a>
+            <span th:if="${user.isActive()}">
+                <a th:href="|/user/${user.id}|" th:text="${'deactivate'}"></a>
+            </span>
+            <span th:unless="${user.isActive()}">
+                <a th:href="|/user/${user.id}|" th:text="${'activate'}"></a>
+            </span>
+
         </td>
         <td th:text="${user.email}"></td>
         <td th:text="${user.phone}"></td>
