@@ -26,4 +26,25 @@ public class UserServiceImpl implements UserService {
         userRepository.findAll().forEach(user -> users.add(user));
         return users;
     }
+
+    @Override
+    public User getUserById(Long id) {
+        return userRepository.findUserById(id);
+    }
+
+    @Override
+    public User changeUserStatus(Long id) {
+
+        User currentUser = getUserById(id);
+
+        if(currentUser.isActive()){
+            currentUser.setActive(false);
+        }
+        else{
+            currentUser.setActive(true);
+        }
+
+        userRepository.save(currentUser);
+        return currentUser;
+    }
 }

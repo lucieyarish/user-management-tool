@@ -41,7 +41,9 @@
         <td th:text="${user.id}"></td>
         <td th:text="${user.name}"></td>
         <td th:text="${user.surname}"></td>
-        <td th:text="${user.active}"><button class="ui primary button"></button></td>
+        <td>
+            <a th:href="|/user/${user.id}|" th:text="${user.active}"></a>
+        </td>
         <td th:text="${user.email}"></td>
         <td th:text="${user.phone}"></td>
         <td th:text="${user.createdOn}"></td>
