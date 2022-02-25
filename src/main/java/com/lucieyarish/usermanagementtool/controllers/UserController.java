@@ -6,11 +6,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -26,7 +24,7 @@ public class UserController {
         return "index";
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/changeStatus/{id}")
     public String modifyUserStatus(@PathVariable Long id) {
         userService.changeUserStatus(id);
         return "redirect:/";
@@ -35,6 +33,19 @@ public class UserController {
     @GetMapping("/removeUser/{id}")
     public String removeUser(@PathVariable Long id) {
         userService.removeUser(id);
+        return "redirect:/";
+    }
+
+    @GetMapping("/user/{id}")
+    public String displayUser(@PathVariable Long id, Model model) {
+        model.addAttribute("userInfo", userService.getUserById(id));
+        return "editUser";
+    }
+
+    @PostMapping("/editUser")
+    public String editUser(@ModelAttribute User user) {
+        user.setCreatedOn(LocalDateTime.now());
+        userService.saveUser(user);
         return "redirect:/";
     }
 }
