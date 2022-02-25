@@ -53,4 +53,13 @@ public class UserServiceImpl implements UserService {
         User currentUser = userRepository.findUserById(id);
         userRepository.delete(currentUser);
     }
+
+    // method for filtering
+    @Override
+    public List<User> listAll(String keyword){
+        if (keyword != null) {
+            return userRepository.search(keyword);
+        }
+        return userRepository.findAll();
+    }
 }

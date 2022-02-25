@@ -15,4 +15,7 @@ public interface UserService {
     User changeUserStatus(Long id);
 
     void removeUser(Long id);
+
+    List<User> listAll(String keyword);
+
 }
