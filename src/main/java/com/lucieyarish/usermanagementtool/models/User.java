@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -34,7 +34,7 @@ public class User {
     private String phone;
 
     @NotNull
-    private LocalDateTime createdOn;
+    private LocalDate createdOn;
 
     public User(String name, String surname, boolean active, String email, String phone) {
         this.name = name;
@@ -42,7 +42,7 @@ public class User {
         this.active = active;
         this.email = email;
         this.phone = phone;
-        this.createdOn = LocalDateTime.now();
+        this.createdOn = LocalDate.now();
     }
 
 }
