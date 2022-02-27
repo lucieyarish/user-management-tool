@@ -24,4 +24,5 @@ public interface UserService {
     Page<User> findPage(int pageNumber);
 
     List<User> searchByDate(LocalDate startDate, LocalDate endDate);
+    
 }
