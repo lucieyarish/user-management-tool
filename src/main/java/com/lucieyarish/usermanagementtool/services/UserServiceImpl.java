@@ -3,6 +3,7 @@ package com.lucieyarish.usermanagementtool.services;
 import com.lucieyarish.usermanagementtool.models.User;
 import com.lucieyarish.usermanagementtool.repositories.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAllUser() {
         List<User> users = new ArrayList<>();
-        userRepository.findAll().forEach(user -> users.add(user));
+        userRepository.findAll(Sort.by(Sort.Direction.ASC, "id")).forEach(user -> users.add(user));
         return users;
     }
 
