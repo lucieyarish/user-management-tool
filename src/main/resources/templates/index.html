@@ -48,7 +48,7 @@
                     <tr><th>Id</th>
                         <th>Name</th>
                         <th>Surname</th>
-                        <th>Active</th>
+                        <th>Status</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Creation Date</th>
@@ -63,10 +63,10 @@
                     <td th:text="${user.surname}"></td>
                     <td>
                         <span th:if="${user.isActive()}">
-                            <a th:href="|/changeStatus/${user.id}|" th:text="${'deactivate'}"></a>
+                            <a th:href="|/changeStatus/${user.id}|" th:text="${'active'}"></a>
                         </span>
                         <span th:unless="${user.isActive()}">
-                            <a th:href="|/changeStatus/${user.id}|" th:text="${'activate'}"></a>
+                            <a th:href="|/changeStatus/${user.id}|" th:text="${'inactive'}"></a>
                         </span>
 
                     </td>

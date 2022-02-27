@@ -12,7 +12,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     User findUserById(Long id);
 
-    @Query("SELECT u FROM User u WHERE CONCAT(u.id, ' ', u.name, ' ', u.surname, ' ', u.email, ' ', u.createdOn, ' ', u.active) LIKE %?1%")
+    @Query("SELECT u FROM User u WHERE CONCAT(u.id, ' ', u.name, ' ', u.surname, ' ', u.email, ' ', u.createdOn, ' ', 'active', ' ', 'inactive') LIKE %?1%")
     List<User> search(String keyword);
 
 }
