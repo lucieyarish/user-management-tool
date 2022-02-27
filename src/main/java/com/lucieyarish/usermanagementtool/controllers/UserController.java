@@ -53,6 +53,14 @@ public class UserController {
         return "index";
     }
 
+    @GetMapping("/searchByDate")
+    public String viewMatchingDate(Model model, String startDate, String endDate) {
+        List<User> users = userService.searchByDate(LocalDate.parse(startDate), LocalDate.parse(startDate));
+        model.addAttribute("users", users);
+
+        return "index";
+    }
+
     @GetMapping("/changeStatus/{id}")
     public String modifyUserStatus(@PathVariable Long id) {
         userService.changeUserStatus(id);
