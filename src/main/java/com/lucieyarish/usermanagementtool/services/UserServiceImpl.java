@@ -20,66 +20,126 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(User user){
-        userRepository.save(user);
+
+        try {
+            userRepository.save(user);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public List<User> getAllUser() {
-        List<User> users = new ArrayList<>();
-        userRepository.findAll(Sort.by(Sort.Direction.ASC, "id")).forEach(user -> users.add(user));
-        return users;
+
+        try {
+            List<User> users = new ArrayList<>();
+            userRepository
+                    .findAll(Sort.by(Sort.Direction.ASC, "id"))
+                    .forEach(user -> users.add(user));
+            return users;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     @Override
     public User getUserById(Long id) {
-        return userRepository.findUserById(id);
+
+        try {
+             return userRepository.findUserById(id);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     @Override
     public User changeUserStatus(Long id) {
+        try {
+            User currentUser = getUserById(id);
 
-        User currentUser = getUserById(id);
+            if (currentUser.isActive()){
+                currentUser.setActive(false);
+            }
+            else {
+                currentUser.setActive(true);
+            }
 
-        if(currentUser.isActive()){
-            currentUser.setActive(false);
+            userRepository.save(currentUser);
+            return currentUser;
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        else{
-            currentUser.setActive(true);
-        }
 
-        userRepository.save(currentUser);
-        return currentUser;
+        return null;
     }
 
     @Override
     public void removeUser(Long id) {
-        User currentUser = userRepository.findUserById(id);
-        userRepository.delete(currentUser);
+
+        try {
+            User currentUser = userRepository.findUserById(id);
+            userRepository.delete(currentUser);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // method for filtering
     @Override
     public List<User> listAllContainingKeyword(String keyword) {
-        if (keyword != null) {
-            return userRepository.search(keyword);
+
+        try {
+            if (keyword != null) {
+                return userRepository.search(keyword);
+            }
+
+            return userRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        return userRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+        return null;
     }
 
     @Override
     public Page<User> findPage(int pageNumber) {
-        Pageable pageable = PageRequest.of(pageNumber - 1, 5);
-        Page<User> listOfUsers = userRepository.findAll(pageable);
 
-        return listOfUsers;
+        try {
+            Pageable pageable = PageRequest.of(pageNumber - 1, 5);
+            Page<User> listOfUsers = userRepository.findAll(pageable);
+
+            return listOfUsers;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     // method for filtering by date
     @Override
     public List<User> searchByDate(LocalDate startDate, LocalDate endDate) {
-        List<User> users = userRepository.getAllBetweenDates(startDate, endDate);
 
-        return users;
+        try {
+            List<User> users = userRepository.getAllBetweenDates(startDate, endDate);
+
+            return users;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }
