@@ -3,10 +3,11 @@ package com.lucieyarish.usermanagementtool.services;
 import com.lucieyarish.usermanagementtool.models.User;
 import com.lucieyarish.usermanagementtool.repositories.UserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -50,17 +51,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void removeUser(Long id){
+    public void removeUser(Long id) {
         User currentUser = userRepository.findUserById(id);
         userRepository.delete(currentUser);
     }
 
     // method for filtering
     @Override
-    public List<User> listAll(String keyword){
+    public List<User> listAllContainingKeyword(String keyword) {
         if (keyword != null) {
             return userRepository.search(keyword);
         }
         return userRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+    }
+
+    @Override
+    public Page<User> findPage(int pageNumber) {
+        Pageable pageable = PageRequest.of(pageNumber - 1, 5);
+        Page<User> listOfUsers = userRepository.findAll(pageable);
+        return listOfUsers;
+
     }
 }

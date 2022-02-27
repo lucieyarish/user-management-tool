@@ -1,7 +1,9 @@
 package com.lucieyarish.usermanagementtool.services;
 
 import com.lucieyarish.usermanagementtool.models.User;
+import org.springframework.data.domain.Page;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 public interface UserService {
@@ -16,6 +18,8 @@ public interface UserService {
 
     void removeUser(Long id);
 
-    List<User> listAll(String keyword);
+    List<User> listAllContainingKeyword(String keyword);
+
+    Page<User> findPage(int pageNumber);
 
 }
