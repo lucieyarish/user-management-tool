@@ -16,12 +16,11 @@
         <form th:action="@{/search}" style="margin-top: 30px; margin-bottom: 5px;">
             <div class="form-group row">
                 <div class="col-sm-12">
-                    <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required />
-    <!--                non-breaking space -->
+                    <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required class="input-sm"/>
                     &nbsp;
-                    <input type="submit" value="Search" />
+                    <input type="submit" value="Search" class="btn btn-outline-primary btn-sm"/>
                     &nbsp;
-                    <input type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
+                    <input type="button" value="Clear" class="btn btn-outline-primary btn-sm" id="btnClear" onclick="clearSearch()" />
                 </div>
             </div>
         </form>
@@ -96,7 +95,6 @@
     <!--    PAGINATION -->
         <div class="d-flex justify-content-center">
             <nav aria-label="Page navigation example" class="justify-content-center">
-                <p class="text-center">Total Items [[${totalItems}]] : Page [[${currentPage}]] of [[${totalPages}]]</p>
 
                 <ul class="pagination">
                     <li class="page-item">
@@ -124,6 +122,9 @@
                         <span class="page-link" th:unless="${currentPage < totalPages}">Last</span>
                     </li>
                 </ul>
+
+                <p class="text-center text-secondary" style="font-size: 10px;">Total Items [[${totalItems}]] : Page [[${currentPage}]] of [[${totalPages}]]</p>
+
             </nav>
         </div>
 

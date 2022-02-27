@@ -5,7 +5,6 @@ import com.lucieyarish.usermanagementtool.services.UserService;
 import com.lucieyarish.usermanagementtool.services.UserServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,24 +12,22 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 @Controller
 @AllArgsConstructor
 public class UserController {
 
     private final UserService userService;
-    private final UserServiceImpl userServiceImpl;
 
     @GetMapping("/")
     public String getAllPages(Model model){
+
         return getOnePage(model, 1);
     }
 
     @GetMapping("/page/{pageNumber}")
     public String getOnePage(Model model, @PathVariable("pageNumber") int currentPage) {
+
         Page<User> page = userService.findPage(currentPage);
         int totalPages = page.getTotalPages();
         long totalItems = page.getTotalElements();
@@ -46,19 +43,29 @@ public class UserController {
 
     @GetMapping("/search")
     public String viewMatchingResults(Model model, @Param("keyword") String keyword) {
-        List<User> users = userService.listAllContainingKeyword(keyword);
-        model.addAttribute("users", users);
-        model.addAttribute("keyword", keyword);
 
-        return "index";
+            List<User> users = userService.listAllContainingKeyword(keyword);
+
+            model.addAttribute("users", users);
+            model.addAttribute("keyword", keyword);
+
+            if (users.isEmpty()) {
+                return null;
+            }
+
+            return "index";
+
     }
 
     @GetMapping("/searchByDate")
     public String viewMatchingDate(Model model, String startDate, String endDate) {
-        List<User> users = userService.searchByDate(LocalDate.parse(startDate), LocalDate.parse(startDate));
+
+        List<User> users = userService.searchByDate(LocalDate.parse(startDate), LocalDate.parse(endDate));
+
         model.addAttribute("users", users);
 
         return "index";
+
     }
 
     @GetMapping("/changeStatus/{id}")
