@@ -51,36 +51,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void removeUser(Long id){
+    public void removeUser(Long id) {
         User currentUser = userRepository.findUserById(id);
         userRepository.delete(currentUser);
     }
 
     // method for filtering
     @Override
-    public List<User> listAllContainingKeyword(String keyword){
+    public List<User> listAllContainingKeyword(String keyword) {
         if (keyword != null) {
             return userRepository.search(keyword);
         }
         return userRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 
-    public Page<User> findPaginated(Pageable pageable){
-        int pageSize = pageable.getPageSize();
-        int currentPage = pageable.getPageNumber();
-        int startItem = currentPage * pageSize;
-        int listSize = userRepository.findAll().size();
-        List<User> users;
+    @Override
+    public Page<User> findPage(int pageNumber) {
+        Pageable pageable = PageRequest.of(pageNumber - 1, 5);
+        Page<User> listOfUsers = userRepository.findAll(pageable);
+        return listOfUsers;
 
-        if(listSize < startItem) {
-            users = Collections.emptyList();
-        } else {
-            int toIndex = Math.min(startItem + pageSize, listSize);
-            users = userRepository.findAll().subList(startItem, toIndex);
-        }
-
-        Page<User> userPage = new PageImpl<User>(users, PageRequest.of(currentPage, pageSize), listSize);
-
-        return userPage;
     }
 }

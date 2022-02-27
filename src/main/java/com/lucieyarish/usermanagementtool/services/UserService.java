@@ -20,6 +20,6 @@ public interface UserService {
 
     List<User> listAllContainingKeyword(String keyword);
 
-//    Page<User> findPaginated(Pageable pageable);
+    Page<User> findPage(int pageNumber);
 
 }
