@@ -44,14 +44,17 @@ public class UserController {
     @GetMapping("/search")
     public String viewMatchingResults(Model model, @Param("keyword") String keyword) {
 
-            List<User> users = userService.listAllContainingKeyword(keyword);
+        List<User> users = userService.listAllContainingKeyword(keyword);
+        int currentPage = 1;
+        Page<User> page = userService.findPage(currentPage);
+        int totalPages = page.getTotalPages();
+        long totalItems = page.getTotalElements();
 
-            model.addAttribute("users", users);
-            model.addAttribute("keyword", keyword);
-
-            if (users.isEmpty()) {
-                return null;
-            }
+        model.addAttribute("users", users);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("currentPage", currentPage);
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("totalItems", totalItems);
 
             return "index";
 

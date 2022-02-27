@@ -96,19 +96,10 @@ public class UserServiceImpl implements UserService {
     // method for filtering
     @Override
     public List<User> listAllContainingKeyword(String keyword) {
-
-        try {
             if (keyword != null) {
                 return userRepository.search(keyword);
             }
-
             return userRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return null;
     }
 
     @Override
