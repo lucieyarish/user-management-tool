@@ -2,7 +2,7 @@ INSERT INTO "User"("id", "name", "surname", "active", "email", "phone", "created
 VALUES (1, 'Frodo', 'Baggins', true, 'frodo@hobbiton.com', '284739546', current_date),
 (2, 'Samwise', 'Gamgee', true, 'sam@hobbiton.com', '958473823', current_date),
 (3, 'Merry', 'Brandybuck', true, 'merry@hobbiton.com', '387424283', current_date),
-(4, ‘Peregrin, ‘Took’, true, ‘pippin@hobbiton.com', '886473334', current_date),
+(4, 'Peregrin', 'Took', true, 'pippin@hobbiton.com', '447390584', current_date),
 (5, 'Gandalf', 'Grey', true, 'gandalfthegrey@valinor.com', '283745123', current_date),
 (6, 'Aragorn', 'Strider', true, 'aragorn@gondor.com', '364752880', current_date),
 (7, 'Gimli', 'Sonofglóin', true, 'gimli@erebor.com', '475663094', current_date),
