@@ -64,8 +64,15 @@ public class UserController {
     public String viewMatchingDate(Model model, String startDate, String endDate) {
 
         List<User> users = userService.searchByDate(LocalDate.parse(startDate), LocalDate.parse(endDate));
+        int currentPage = 1;
+        Page<User> page = userService.findPage(currentPage);
+        int totalPages = page.getTotalPages();
+        long totalItems = page.getTotalElements();
 
         model.addAttribute("users", users);
+        model.addAttribute("currentPage", currentPage);
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("totalItems", totalItems);
 
         return "index";
 
