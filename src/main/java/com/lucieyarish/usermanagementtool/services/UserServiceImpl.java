@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -62,6 +63,7 @@ public class UserServiceImpl implements UserService {
         if (keyword != null) {
             return userRepository.search(keyword);
         }
+
         return userRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 
@@ -69,7 +71,15 @@ public class UserServiceImpl implements UserService {
     public Page<User> findPage(int pageNumber) {
         Pageable pageable = PageRequest.of(pageNumber - 1, 5);
         Page<User> listOfUsers = userRepository.findAll(pageable);
-        return listOfUsers;
 
+        return listOfUsers;
+    }
+
+    // method for filtering by date
+    @Override
+    public List<User> searchByDate(LocalDate startDate, LocalDate endDate) {
+        List<User> users = userRepository.getAllBetweenDates(startDate, endDate);
+
+        return users;
     }
 }
