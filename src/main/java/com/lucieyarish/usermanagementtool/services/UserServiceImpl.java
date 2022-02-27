@@ -61,6 +61,6 @@ public class UserServiceImpl implements UserService {
         if (keyword != null) {
             return userRepository.search(keyword);
         }
-        return userRepository.findAll();
+        return userRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 }
