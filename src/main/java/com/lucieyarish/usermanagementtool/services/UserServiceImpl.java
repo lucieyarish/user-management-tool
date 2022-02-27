@@ -3,10 +3,11 @@ package com.lucieyarish.usermanagementtool.services;
 import com.lucieyarish.usermanagementtool.models.User;
 import com.lucieyarish.usermanagementtool.repositories.UserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -57,10 +58,29 @@ public class UserServiceImpl implements UserService {
 
     // method for filtering
     @Override
-    public List<User> listAll(String keyword){
+    public List<User> listAllContainingKeyword(String keyword){
         if (keyword != null) {
             return userRepository.search(keyword);
         }
         return userRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+    }
+
+    public Page<User> findPaginated(Pageable pageable){
+        int pageSize = pageable.getPageSize();
+        int currentPage = pageable.getPageNumber();
+        int startItem = currentPage * pageSize;
+        int listSize = userRepository.findAll().size();
+        List<User> users;
+
+        if(listSize < startItem) {
+            users = Collections.emptyList();
+        } else {
+            int toIndex = Math.min(startItem + pageSize, listSize);
+            users = userRepository.findAll().subList(startItem, toIndex);
+        }
+
+        Page<User> userPage = new PageImpl<User>(users, PageRequest.of(currentPage, pageSize), listSize);
+
+        return userPage;
     }
 }
