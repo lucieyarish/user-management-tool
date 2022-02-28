@@ -13,10 +13,23 @@
 
 ## Project Design
 
+[Outcome](#outcome)
+
 ![page layout](https://github.com/lucieyarish/user-management-tool/blob/main/assets/layout.png)
 
 ![edit user](https://github.com/lucieyarish/user-management-tool/blob/main/assets/edit-usr.png)
 
 ## Process Documentation
+
+## [Outcome](#outcome)
+
+##### Pagination Feature
+![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/pagination.gif)
+
+##### Filtering 
+![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/filtering.gif)
+
+##### Update Info & Remove User
+![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/updateDelete.gif)
 
 ## Project Retrospective
