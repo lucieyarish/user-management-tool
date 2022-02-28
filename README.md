@@ -7,7 +7,7 @@
 * [Self-Reflection](#self-reflection)
 
 
-### [Task Description](#task)
+### Task Description
 
 * Design and create an admin page for user management
 * The page will display an overview of users
@@ -18,7 +18,7 @@
   phone, date of creation
 * It will be possible to perform the following actions on each user: activate/deactivate, edit, delete
 
-### [Project Design](#design)
+### Project Design
 
 When you look at the [final result](#outcome), you will immediately notice that the initial design looks quite different. See [this](#self-reflection) section to read more about the project's drawbacks.
 
@@ -26,7 +26,7 @@ When you look at the [final result](#outcome), you will immediately notice that 
 
 ![edit user](https://github.com/lucieyarish/user-management-tool/blob/main/assets/edit-usr.png)
 
-### [Tech Stack and Tools](#techstack)
+### Tech Stack and Tools
 * Spring Boot
 * Gradle
 * Spring Data JPA
@@ -42,7 +42,7 @@ When you look at the [final result](#outcome), you will immediately notice that 
 * Canva (design)
 * Notion (progress notes)
 
-### [Process Documentation](#documentation)
+### Process Documentation
 The whole process began by designing the layout of the application in [Canva](https://www.canva.com) and research on Java Enterprise, JSF, and PrimeFaces. The attempt to build the project with the help of technologies that I wasn't familiar with was quickly abandoned due to time pressure. After deciding for the combination of Spring Boot, Thymeleaf and PostgreSQL, I also opted for dividing the entire project into respective featureas and work in separate branches here on GitHub.
 
 ![branches overview](https://github.com/lucieyarish/user-management-tool/blob/main/assets/branchesOverview.png)
@@ -54,7 +54,7 @@ In the next phase I worked on two CRUD operation features—the possibility of u
 The final stage of the project was devoted to implementing pagination and a feature that provides users with search by date functionality, followed by refactoring, the addition of error handling, and this structured overview on GitHub.
 
 
-### [Outcome](#outcome)
+### Outcome
 
 ##### Pagination Feature
 ![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/pagination.mov)
@@ -65,4 +65,4 @@ The final stage of the project was devoted to implementing pagination and a feat
 ##### Update Info & Remove User
 ![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/crud.mov)
 
-### [Self-Reflection](#self-reflection)
+### Self-Reflection
