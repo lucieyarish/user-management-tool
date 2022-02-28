@@ -42,6 +42,6 @@ When you look at the [final result](#outcome), you will immediately notice that 
 ![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/filtering.mov)
 
 ##### Update Info & Remove User
-![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/crud.mov)
+![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/crud.gif)
 
 ## [Project Retrospective](#retrospective)
