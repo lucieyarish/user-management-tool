@@ -78,5 +78,6 @@ There are, of course, many drawbacks that need to be addressed:
 * My error handling skills are something that I am going to start working on as soon as possible
 * There is code duplication present when filtering (because of paginated results)
 * Tests are missing
+* The [videos](#outcome) showcasing the app are extremely slow for some reason (I promise that I don't move my mouse this slow)
 
 I have to say that I am very thankful for the opportunity to work on this great project which has helped me identify the skills that should be improved!
