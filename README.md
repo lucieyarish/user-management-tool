@@ -13,13 +13,25 @@
 
 ## Project Design
 
-[Outcome](#outcome)
+When you look at the [final result](#outcome), you will immediately notice that the initial design looks quite different. See [this](#retrospective) section to read more about the project's drawbacks.
 
 ![page layout](https://github.com/lucieyarish/user-management-tool/blob/main/assets/layout.png)
 
 ![edit user](https://github.com/lucieyarish/user-management-tool/blob/main/assets/edit-usr.png)
 
+## Tech Stack
+* Spring Boot
+* Gradle
+* Spring Data JPA
+* Hibernate
+* PostgreSQL
+* Thymeleaf
+* Bootstrap
+* Git
+* GitHub
+
 ## Process Documentation
+
 
 ## [Outcome](#outcome)
 
@@ -32,4 +44,4 @@
 ##### Update Info & Remove User
 ![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/updateDelete.gif)
 
-## Project Retrospective
+## [Project Retrospective](#retrospective)
