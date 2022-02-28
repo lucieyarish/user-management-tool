@@ -8,7 +8,7 @@
 6. [Self-Reflection](#self-reflection)
 
 
-### Task Description<a name="task"></a>
+## Task Description<a name="task"></a>
 
 * Design and create an admin page for user management
 * The page will display an overview of users
@@ -19,7 +19,7 @@
   phone, date of creation
 * It will be possible to perform the following actions on each user: activate/deactivate, edit, delete
 
-### Project Design<a name="design"></a>
+## Project Design<a name="design"></a>
 
 When you look at the [final result](#outcome), you will immediately notice that the initial design looks quite different. See [this](#self-reflection) section to read more about the project's drawbacks.
 
@@ -27,7 +27,7 @@ When you look at the [final result](#outcome), you will immediately notice that 
 
 ![edit user](https://github.com/lucieyarish/user-management-tool/blob/main/assets/edit-usr.png)
 
-### Tech Stack and Tools<a name="techstack"></a>
+## Tech Stack and Tools<a name="techstack"></a>
 * Spring Boot
 * Gradle
 * Spring Data JPA
@@ -43,7 +43,7 @@ When you look at the [final result](#outcome), you will immediately notice that 
 * Canva (design)
 * Notion (progress notes)
 
-### Process Documentation<a name="documentation"></a>
+## Process Documentation<a name="documentation"></a>
 The whole process began by designing the layout of the application in [Canva](https://www.canva.com) and research on Java Enterprise, JSF, and PrimeFaces. The attempt to build the project with the help of technologies that I wasn't familiar with was quickly abandoned due to time pressure. After deciding for the combination of Spring Boot, Thymeleaf and PostgreSQL, I also opted for dividing the entire project into respective featureas and work in separate branches here on GitHub.
 
 ![branches overview](https://github.com/lucieyarish/user-management-tool/blob/main/assets/branchesOverview.png)
@@ -55,18 +55,18 @@ In the next phase I worked on two CRUD operation features—the possibility of u
 The final stage of the project was devoted to implementing pagination and a feature that provides users with search by date functionality, followed by refactoring, the addition of error handling, and this structured overview on GitHub.
 
 
-### Outcome<a name="outcome"></a>
+## Outcome<a name="outcome"></a>
 
-##### Pagination Feature
+### Pagination Feature
 ![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/pagination.mov)
 
-##### Filtering 
+### Filtering 
 ![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/filtering.mov)
 
-##### Update Info & Remove User
+### Update Info & Remove User
 ![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/crud.mov)
 
-### Self-Reflection<a name="self-reflection"></a>
+## Self-Reflection<a name="self-reflection"></a>
 
 Although I am very much aware that the application still needs a lot of work, I am quite happy with the result because I enjoyed the whole process and learned new things along the way. Just to name a few, I've learned how to keep better organized, had a chance to practice SQL, learned to work with Thymeleaf, and managed to create application structure and design from scratch. 
 
