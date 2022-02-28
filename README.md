@@ -36,12 +36,12 @@ When you look at the [final result](#outcome), you will immediately notice that 
 ## [Outcome](#outcome)
 
 ##### Pagination Feature
-![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/pagination.gif)
+![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/pagination.mov)
 
 ##### Filtering 
-![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/filtering.gif)
+![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/filtering.mov)
 
 ##### Update Info & Remove User
-![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/crud.gif)
+![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/crud.mov)
 
 ## [Project Retrospective](#retrospective)
