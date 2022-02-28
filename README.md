@@ -48,7 +48,7 @@ The whole process began by designing the layout of the application in [Canva](ht
 
 ![branches overview](https://github.com/lucieyarish/user-management-tool/blob/main/assets/branchesOverview.png)
 
-The next step was to create project base structure and User database model. At the same time, I prepared [SQL queries](https://github.com/lucieyarish/user-management-tool/blob/main/assets/sampleData.txt) in order to load sample data into PostgreSQL and began to learn how to use Thymeleaf since I had never used it before. After that, I created index template and the necessary endpoints and methods to render the database data, and also added the logic needed for changing users' status (active/inactive).
+The next step was to create project base structure (Spring MVC)and User database model. At the same time, I prepared [SQL queries](https://github.com/lucieyarish/user-management-tool/blob/main/assets/sampleData.txt) in order to load sample data into PostgreSQL and began to learn how to use Thymeleaf since I had never used it before. After that, I created index template and the necessary endpoints and methods to render the database data, and also added the logic needed for changing users' status (active/inactive).
 
 In the next phase I worked on two CRUD operation features—the possibility of updating users' information and deleting them from the database. Next, I moved onto the filtering feature. I have decided to add a search bar and native queries that enable returning results which contain the searched keyword included in user's id, name, surname, email, creation date, and status. You might have noticed that there is no search bar in the application design. The reason behind that is that I misunderstood the assignment instructions and mistakened the filtering feature with ordering items in the database.
 
@@ -67,3 +67,16 @@ The final stage of the project was devoted to implementing pagination and a feat
 ![](https://github.com/lucieyarish/user-management-tool/blob/main/assets/crud.mov)
 
 ### Self-Reflection<a name="self-reflection"></a>
+
+Although I am very much aware that the application still needs a lot of work, I am quite happy with the result because I enjoyed the whole process and learned new things along the way. Just to name a few, I've learned how to keep better organized, had a chance to practice SQL, learned to work with Thymeleaf, and managed to create application structure and design from scratch. 
+
+There are, of course, many drawbacks that need to be addressed:
+* Not being able to build REST API (due to the use of Thymeleaf) had led to (sometimes) ugly endpoint naming 
+* Even though the project is divided into branches based on its respective features, I would occasionally start working on unrelated functionalities by accident, and therefore failing to stick to the structure 100%
+* When searching for users with either active or inactive status, keywords "true" and "false" have to be used
+* Although I added result sorting function, users whom status is changed by clicking the status active/inactive link "automatically "jump" to the very end of the list
+* My error handling skills are something that I am going to start working on as soon as possible
+* There is code duplication present when filtering (because of paginated results)
+* Tests are missing
+
+I have to say that I am very thankful for the opportunity to work on this great project which has helped me identify the skills that should be improved!
